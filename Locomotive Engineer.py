@@ -44,21 +44,15 @@ def add_missing_stops(from_to, **dargs):
 
 
 def fix_wagon_depot(tuples):
+    # функция формирует список вагонов разных цветов так, чтобы получились столбцы из одинаковых вагонов.
     list_return = []
-    red_list = tuples[0]
-    blue_list = tuples[1]
+    red_list    = tuples[0]
+    blue_list   = tuples[1]
     orange_list = tuples[2]
-    # for tuple_element in tuples:
-    #    for item in tuple_element:
-    #        if item[1] == "red":
-    #            red_list.append(item)
-    #        elif item[1] == "blue":
-    #            blue_list.append(item)
-    #        elif item[1] == "orange":
-    #            orange_list.append(item)
-    list_one = [red_list[0], blue_list[0], orange_list[0]]
-    list_two = [red_list[1], blue_list[1], orange_list[1]]
-    list_three = [red_list[2], blue_list[2], orange_list[2]]
+    list_one    = [red_list[0], blue_list[0], orange_list[0]]
+    list_two    = [red_list[1], blue_list[1], orange_list[1]]
+    list_three  = [red_list[2], blue_list[2], orange_list[2]]
+
     list_return.append(list_one)
     list_return.append(list_two)
     list_return.append(list_three)
@@ -83,8 +77,8 @@ if __name__ == '__main__':
     extend_route = extend_route_information({"from": "Larnaka", "to": "Novosibirsk"}, {"length": "100", "speed": "50"})
     wagon_depot = fix_wagon_depot([
                                 [(2, "red"), (4, "red"), (8, "red")],
-                                [(5, "blue"), (9, "blue"), (13,"blue")],
-                                [(3, "orange"), (7, "orange"), (11,"orange")],
+                                [(5, "blue"), (9, "blue"), (13, "blue")],
+                                [(3, "orange"), (7, "orange"), (11, "orange")],
                                 ])
     print(list_to_print)
     print(fix_list_wagons)
